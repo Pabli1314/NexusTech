@@ -1,0 +1,520 @@
+CRITICAL - 2024-06-04 01:30:29 --> ErrorException: Undefined array key "estado"
+in APPPATH\Views\back-end\mainAdmin.php on line 29.
+ 1 APPPATH\Views\back-end\mainAdmin.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado"', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\mainAdmin.php', 29)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\mainAdmin.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('back-end/mainAdmin', [], true)
+ 5 APPPATH\Controllers\Administracion.php(15): view('back-end/mainAdmin')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->admin()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 01:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 01:31:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 01:31:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 01:31:16 --> ErrorException: Undefined variable $row
+in APPPATH\Views\back-end\mainAdmin.php on line 31.
+ 1 APPPATH\Views\back-end\mainAdmin.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\mainAdmin.php', 31)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\mainAdmin.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('back-end/mainAdmin', [], true)
+ 5 APPPATH\Controllers\Administracion.php(15): view('back-end/mainAdmin')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->admin()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-04 12:13:37 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`)) in C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\proyecto_Beck_Pablo\system\BaseModel.php(987): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(807): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\proyecto_Beck_Pablo\app\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', Array)
+#8 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19', '19')
+#9 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+#10 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_Beck_Pablo\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-04 12:13:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `productos` SET `cat_producto` = :cat_producto:, `marca` = :marca:, `nom_producto` = :nom_producto:, `precio` = :precio:, `stock` = :stock:, `descripcion` = :descripcion:, `img_producto` = :img_producto:, `estado_producto` = :estado_producto:
+WHERE `productos`.`id_producto` IN :productos.id_producto:', [...], false)
+ 2 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19', '19')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 12:13:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `productos` SET `cat_producto` = :cat_producto:, `marca` = :marca:, `nom_producto` = :nom_producto:, `precio` = :precio:, `stock` = :stock:, `descripcion` = :descripcion:, `img_producto` = :img_producto:, `estado_producto` = :estado_producto:
+WHERE `productos`.`id_producto` IN :productos.id_producto:', [...], false)
+ 4 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19', '19')
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 12:13:38 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `productos` SET `cat_producto` = :cat_producto:, `marca` = :marca:, `nom_producto` = :nom_producto:, `precio` = :precio:, `stock` = :stock:, `descripcion` = :descripcion:, `img_producto` = :img_producto:, `estado_producto` = :estado_producto:
+WHERE `productos`.`id_producto` IN :productos.id_producto:', [...], false)
+ 5 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19', '19')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-04 12:18:05 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`)) in C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\proyecto_Beck_Pablo\system\BaseModel.php(987): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(807): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\proyecto_Beck_Pablo\app\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', Array)
+#8 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19', '19')
+#9 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+#10 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_Beck_Pablo\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-04 12:18:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `productos` SET `cat_producto` = :cat_producto:, `marca` = :marca:, `nom_producto` = :nom_producto:, `precio` = :precio:, `stock` = :stock:, `descripcion` = :descripcion:, `img_producto` = :img_producto:, `estado_producto` = :estado_producto:
+WHERE `productos`.`id_producto` IN :productos.id_producto:', [...], false)
+ 2 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19', '19')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 12:18:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `productos` SET `cat_producto` = :cat_producto:, `marca` = :marca:, `nom_producto` = :nom_producto:, `precio` = :precio:, `stock` = :stock:, `descripcion` = :descripcion:, `img_producto` = :img_producto:, `estado_producto` = :estado_producto:
+WHERE `productos`.`id_producto` IN :productos.id_producto:', [...], false)
+ 4 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19', '19')
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 12:18:05 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `productos` SET `cat_producto` = :cat_producto:, `marca` = :marca:, `nom_producto` = :nom_producto:, `precio` = :precio:, `stock` = :stock:, `descripcion` = :descripcion:, `img_producto` = :img_producto:, `estado_producto` = :estado_producto:
+WHERE `productos`.`id_producto` IN :productos.id_producto:', [...], false)
+ 5 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19', '19')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-04 12:26:53 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`)) in C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\proyecto_Beck_Pablo\system\BaseModel.php(987): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(807): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\proyecto_Beck_Pablo\app\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', Array)
+#8 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19', '19')
+#9 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+#10 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_Beck_Pablo\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-04 12:26:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `productos` SET `cat_producto` = :cat_producto:, `marca` = :marca:, `nom_producto` = :nom_producto:, `precio` = :precio:, `stock` = :stock:, `descripcion` = :descripcion:, `img_producto` = :img_producto:, `estado_producto` = :estado_producto:
+WHERE `productos`.`id_producto` IN :productos.id_producto:', [...], false)
+ 2 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19', '19')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 12:26:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `productos` SET `cat_producto` = :cat_producto:, `marca` = :marca:, `nom_producto` = :nom_producto:, `precio` = :precio:, `stock` = :stock:, `descripcion` = :descripcion:, `img_producto` = :img_producto:, `estado_producto` = :estado_producto:
+WHERE `productos`.`id_producto` IN :productos.id_producto:', [...], false)
+ 4 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19', '19')
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 12:26:53 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `productos` SET `cat_producto` = :cat_producto:, `marca` = :marca:, `nom_producto` = :nom_producto:, `precio` = :precio:, `stock` = :stock:, `descripcion` = :descripcion:, `img_producto` = :img_producto:, `estado_producto` = :estado_producto:
+WHERE `productos`.`id_producto` IN :productos.id_producto:', [...], false)
+ 5 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19', '19')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-04 12:31:33 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`)) in C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `product...', 0)
+#1 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\proyecto_Beck_Pablo\system\BaseModel.php(987): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(807): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\proyecto_Beck_Pablo\app\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', Array)
+#8 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19')
+#9 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+#10 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_Beck_Pablo\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-04 12:31:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `productos` SET `cat_producto` = :cat_producto:, `marca` = :marca:, `nom_producto` = :nom_producto:, `precio` = :precio:, `stock` = :stock:, `descripcion` = :descripcion:, `img_producto` = :img_producto:, `estado_producto` = :estado_producto:
+WHERE `productos`.`id_producto` IN :productos.id_producto:', [...], false)
+ 2 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 12:31:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `productos` SET `cat_producto` = :cat_producto:, `marca` = :marca:, `nom_producto` = :nom_producto:, `precio` = :precio:, `stock` = :stock:, `descripcion` = :descripcion:, `img_producto` = :img_producto:, `estado_producto` = :estado_producto:
+WHERE `productos`.`id_producto` IN :productos.id_producto:', [...], false)
+ 4 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19')
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 12:31:33 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `productos` SET `cat_producto` = NULL, `marca` = NULL, `nom_producto` = NULL, `precio` = NULL, `stock` = NULL, `descripcion` = NULL, `img_producto` = NULL, `estado_producto` = 0
+WHERE `productos`.`id_producto` IN (\'19\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2474): CodeIgniter\Database\BaseConnection->query('UPDATE `productos` SET `cat_producto` = :cat_producto:, `marca` = :marca:, `nom_producto` = :nom_producto:, `precio` = :precio:, `stock` = :stock:, `descripcion` = :descripcion:, `img_producto` = :img_producto:, `estado_producto` = :estado_producto:
+WHERE `productos`.`id_producto` IN :productos.id_producto:', [...], false)
+ 5 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Administracion.php(137): CodeIgniter\Model->update('19', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('19')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 12:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 12:36:33 --> ErrorException: Undefined variable $productos
+in APPPATH\Views\back-end\mainAdmin.php on line 19.
+ 1 APPPATH\Views\back-end\mainAdmin.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productos', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\mainAdmin.php', 19)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\mainAdmin.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('back-end/mainAdmin', [], true)
+ 5 APPPATH\Controllers\Administracion.php(132): view('back-end/mainAdmin')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('20')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 12:40:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 12:40:27 --> ErrorException: Undefined variable $productos
+in APPPATH\Views\back-end\mainAdmin.php on line 19.
+ 1 APPPATH\Views\back-end\mainAdmin.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productos', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\mainAdmin.php', 19)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\mainAdmin.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('back-end/mainAdmin', [], true)
+ 5 APPPATH\Controllers\Administracion.php(130): view('back-end/mainAdmin')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->eliminar_producto('22')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 12:40:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 12:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 12:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 12:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 12:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 14:30:09 --> ErrorException: Undefined variable $productoModel
+in APPPATH\Controllers\Administracion.php on line 231.
+ 1 APPPATH\Controllers\Administracion.php(231): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productoModel', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Controllers\\Administracion.php', 231)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->actualizar_producto('(:segment)19')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 14:31:01 --> ErrorException: Undefined variable $producto
+in APPPATH\Controllers\Administracion.php on line 231.
+ 1 APPPATH\Controllers\Administracion.php(231): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $producto', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Controllers\\Administracion.php', 231)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->actualizar_producto('(:segment)19')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 14:31:02 --> ErrorException: Undefined variable $producto
+in APPPATH\Controllers\Administracion.php on line 231.
+ 1 APPPATH\Controllers\Administracion.php(231): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $producto', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Controllers\\Administracion.php', 231)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->actualizar_producto('(:segment)19')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 14:39:08 --> Error: Class "App\Controllers\Producto" not found
+in APPPATH\Controllers\Administracion.php on line 227.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->actualizar_producto('(:segment)19')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 14:39:39 --> ErrorException: Undefined variable $salirModal
+in APPPATH\Views\plantilla\alertas.php on line 18.
+ 1 APPPATH\Views\plantilla\alertas.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $salirModal', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\plantilla\\alertas.php', 18)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\plantilla\\alertas.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('plantilla/alertas', [], true)
+ 5 APPPATH\Controllers\Administracion.php(235): view('plantilla/alertas')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->actualizar_producto('(:segment)19')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 14:41:13 --> Error: Cannot use object of type App\Models\Productos as array
+in APPPATH\Controllers\Administracion.php on line 233.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->actualizar_producto('(:segment)19')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 14:41:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:42:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:43:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:43:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:43:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:46:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:47:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:47:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:47:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:47:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 14:48:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:29:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:31:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:31:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:32:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:32:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:32:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:35:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:35:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:40:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:40:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:43:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:47:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:47:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 17:47:30 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\back-end\modificarProducto_view.php on line 13.
+ 1 APPPATH\Views\back-end\modificarProducto_view.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\modificarProducto_view.php', 13)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\modificarProducto_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('back-end/modificarProducto_view', [], true)
+ 5 APPPATH\Controllers\Administracion.php(236): view('back-end/modificarProducto_view')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->actualizar_producto('(:segment)19')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 17:48:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 17:48:08 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\back-end\modificarProducto_view.php on line 13.
+ 1 APPPATH\Views\back-end\modificarProducto_view.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\modificarProducto_view.php', 13)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\modificarProducto_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('back-end/modificarProducto_view', [], true)
+ 5 APPPATH\Controllers\Administracion.php(236): view('back-end/modificarProducto_view')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->actualizar_producto('(:segment)19')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 17:48:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 17:48:09 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Views\back-end\modificarProducto_view.php on line 13.
+ 1 APPPATH\Views\back-end\modificarProducto_view.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\modificarProducto_view.php', 13)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Views\\back-end\\modificarProducto_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('back-end/modificarProducto_view', [], true)
+ 5 APPPATH\Controllers\Administracion.php(236): view('back-end/modificarProducto_view')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->actualizar_producto('(:segment)19')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 17:50:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:50:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 17:50:23 --> Error: Class "App\Controllers\ProductoModel" not found
+in APPPATH\Controllers\Administracion.php on line 155.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->actualizar_producto('(:segment)19')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 17:51:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:51:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:51:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:51:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:52:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:53:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 17:53:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 20:13:23 --> ErrorException: Undefined variable $id
+in APPPATH\Controllers\Administracion.php on line 164.
+ 1 APPPATH\Controllers\Administracion.php(164): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Controllers\\Administracion.php', 164)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->actualizar_producto('(:segment)19')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 20:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:14:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:16:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:45:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:49:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:49:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:50:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:51:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:51:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:51:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:56:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 20:56:35 --> BadMethodCallException: Call to undefined method App\Models\Productos::firts
+in SYSTEMPATH\Model.php on line 874.
+ 1 APPPATH\Controllers\Administracion.php(147): CodeIgniter\Model->__call('firts', [])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->editar_producto('19')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-04 20:57:08 --> BadMethodCallException: Call to undefined method App\Models\Productos::firts
+in SYSTEMPATH\Model.php on line 874.
+ 1 APPPATH\Controllers\Administracion.php(147): CodeIgniter\Model->__call('firts', [])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->editar_producto('19')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 20:57:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 20:57:13 --> BadMethodCallException: Call to undefined method App\Models\Productos::firts
+in SYSTEMPATH\Model.php on line 874.
+ 1 APPPATH\Controllers\Administracion.php(147): CodeIgniter\Model->__call('firts', [])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->editar_producto('19')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 20:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 20:58:21 --> BadMethodCallException: Call to undefined method App\Models\Productos::firts
+in SYSTEMPATH\Model.php on line 874.
+ 1 APPPATH\Controllers\Administracion.php(147): CodeIgniter\Model->__call('firts', [])
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->editar_producto('19', '19')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 21:09:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:10:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:10:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:15:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:15:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:15:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:15:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 21:20:14 --> ErrorException: Undefined variable $categorias
+in APPPATH\Controllers\Administracion.php on line 147.
+ 1 APPPATH\Controllers\Administracion.php(147): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Controllers\\Administracion.php', 147)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->editar_producto('19', '19')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-04 21:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:24:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:24:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:24:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:24:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:25:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:27:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:28:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

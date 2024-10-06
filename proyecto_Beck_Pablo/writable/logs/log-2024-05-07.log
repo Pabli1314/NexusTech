@@ -1,0 +1,10 @@
+CRITICAL - 2024-05-07 16:46:08 --> Error: Call to undefined function form_number()
+in APPPATH\Views\contenido\registrarse.php on line 46.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('contenido/registrarse', [], true)
+ 4 APPPATH\Controllers\Home.php(34): view('contenido/registrarse')
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->registrarse()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

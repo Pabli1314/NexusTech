@@ -1,0 +1,242 @@
+INFO - 2024-05-31 12:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 12:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 12:41:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 12:43:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-31 12:55:30 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`)) in C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyecto_Beck_Pablo\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(744): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyecto_Beck_Pablo\app\Controllers\Administracion.php(88): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+#9 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+#10 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_Beck_Pablo\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-31 12:55:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (:nom_producto:, :precio:, :stock:, :descripcion:, :img_producto:, :estado_producto:)', [...], false)
+ 2 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Administracion.php(88): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-31 12:55:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717160130_1db01e46508245284888.jpg\', 1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717160130_1db01e46508245284888.jpg\', 1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (:nom_producto:, :precio:, :stock:, :descripcion:, :img_producto:, :estado_producto:)', [...], false)
+ 4 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Administracion.php(88): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-31 12:55:30 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717160130_1db01e46508245284888.jpg\', 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717160130_1db01e46508245284888.jpg\', 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717160130_1db01e46508245284888.jpg\', 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (:nom_producto:, :precio:, :stock:, :descripcion:, :img_producto:, :estado_producto:)', [...], false)
+ 5 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Administracion.php(88): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 13:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:52:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:52:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 13:52:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:19:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-31 14:19:54 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`)) in C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyecto_Beck_Pablo\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(744): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyecto_Beck_Pablo\app\Controllers\Administracion.php(88): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+#9 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+#10 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_Beck_Pablo\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-31 14:19:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (:nom_producto:, :precio:, :stock:, :descripcion:, :img_producto:, :estado_producto:)', [...], false)
+ 2 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Administracion.php(88): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-31 14:19:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717165194_7e009b1e82a2fba07596.jpg\', 1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717165194_7e009b1e82a2fba07596.jpg\', 1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (:nom_producto:, :precio:, :stock:, :descripcion:, :img_producto:, :estado_producto:)', [...], false)
+ 4 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Administracion.php(88): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-31 14:19:54 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717165194_7e009b1e82a2fba07596.jpg\', 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717165194_7e009b1e82a2fba07596.jpg\', 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717165194_7e009b1e82a2fba07596.jpg\', 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (:nom_producto:, :precio:, :stock:, :descripcion:, :img_producto:, :estado_producto:)', [...], false)
+ 5 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Administracion.php(88): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 14:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-31 14:28:14 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`)) in C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyecto_Beck_Pablo\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(744): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyecto_Beck_Pablo\app\Controllers\Administracion.php(88): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+#9 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+#10 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_Beck_Pablo\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-31 14:28:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (:nom_producto:, :precio:, :stock:, :descripcion:, :img_producto:, :estado_producto:)', [...], false)
+ 2 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Administracion.php(88): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-31 14:28:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717165694_1d62106327c388396bcc.jpg\', 1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717165694_1d62106327c388396bcc.jpg\', 1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (:nom_producto:, :precio:, :stock:, :descripcion:, :img_producto:, :estado_producto:)', [...], false)
+ 4 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Administracion.php(88): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-31 14:28:14 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717165694_1d62106327c388396bcc.jpg\', 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717165694_1d62106327c388396bcc.jpg\', 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717165694_1d62106327c388396bcc.jpg\', 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (:nom_producto:, :precio:, :stock:, :descripcion:, :img_producto:, :estado_producto:)', [...], false)
+ 5 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Administracion.php(88): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 14:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:59:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 14:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:05:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 15:05:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 23:32:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 23:32:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 23:33:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 23:33:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 23:34:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 23:34:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 23:34:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 23:34:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-31 23:44:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-31 23:44:47 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`)) in C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\proyecto_Beck_Pablo\system\BaseModel.php(802): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\proyecto_Beck_Pablo\system\Model.php(744): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\proyecto_Beck_Pablo\app\Controllers\Administracion.php(88): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+#9 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+#10 C:\xampp\htdocs\proyecto_Beck_Pablo\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto_Beck_Pablo\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-05-31 23:44:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (:nom_producto:, :precio:, :stock:, :descripcion:, :img_producto:, :estado_producto:)', [...], false)
+ 2 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Administracion.php(88): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-31 23:44:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717199087_9be8637aed64d4f9d5d5.jpg\', 1)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717199087_9be8637aed64d4f9d5d5.jpg\', 1)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (:nom_producto:, :precio:, :stock:, :descripcion:, :img_producto:, :estado_producto:)', [...], false)
+ 4 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Administracion.php(88): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-31 23:44:47 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`bd_beck_pablo`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`cat_producto`) REFERENCES `categorias` (`id_categoria`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717199087_9be8637aed64d4f9d5d5.jpg\', 1)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717199087_9be8637aed64d4f9d5d5.jpg\', 1)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (\'Motorola EDGE 30 Neo\', \'869999\', \'50\', \'Motorola EDGE 30 Neo Violeta XT2245-1 AR VP 8+128 SSRTL \', \'1717199087_9be8637aed64d4f9d5d5.jpg\', 1)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2307): CodeIgniter\Database\BaseConnection->query('INSERT INTO `productos` (`nom_producto`, `precio`, `stock`, `descripcion`, `img_producto`, `estado_producto`) VALUES (:nom_producto:, :precio:, :stock:, :descripcion:, :img_producto:, :estado_producto:)', [...], false)
+ 5 SYSTEMPATH\Model.php(326): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(802): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(744): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Administracion.php(88): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Administracion->insertarProducto()
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Administracion))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-31 23:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

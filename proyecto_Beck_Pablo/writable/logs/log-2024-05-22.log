@@ -1,0 +1,29 @@
+CRITICAL - 2024-05-22 14:47:21 --> ErrorException: Undefined variable $route
+in APPPATH\Config\Routes.php on line 33.
+ 1 APPPATH\Config\Routes.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Config\\Routes.php', 33)
+ 2 SYSTEMPATH\Router\RouteCollection.php(345): require('C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 14:47:50 --> ErrorException: Undefined variable $route
+in APPPATH\Config\Routes.php on line 33.
+ 1 APPPATH\Config\Routes.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', 'C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Config\\Routes.php', 33)
+ 2 SYSTEMPATH\Router\RouteCollection.php(345): require('C:\\xampp\\htdocs\\proyecto_Beck_Pablo\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-05-22 14:50:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-22 14:54:31 --> Error: Call to undefined function App\Controllers\getPost()
+in APPPATH\Controllers\ValidarFormularios.php on line 102.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ValidarFormularios->validarRegistro()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ValidarFormularios))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-05-22 14:55:57 --> Error: Class "App\Controllers\Usuarios" not found
+in APPPATH\Controllers\ValidarFormularios.php on line 107.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ValidarFormularios->validarRegistro()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ValidarFormularios))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
